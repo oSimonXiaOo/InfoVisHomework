@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Visualization</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"/>
+    <link rel='stylesheet' href="{% static "css/style.css" %}"/>
+    <script src="{% static "base/jquery.min.js" %}"></script>
+    <script src="{% static "base/bootstrap.min.js" %}"></script>
+    <script src="{% static "base/d3.min.js" %}"></script>
+    <script src="{% static "base/d3-contour.v1.min.js" %}"></script>
+    <script src="{% static "base/d3-scale-chromatic.v1.min.js" %}"></script>
+</head>
+<body>
+<div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" id="home">Density Scatter</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="scattermap">Scatter Map</a></li>
+                    <li><a href="#" id="densitymap">Density Map</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dimensionality <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a id="PCA">PCA</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="TSNE">TSNE</a></li>
+                            <li><a id="ISOMAP">ISOMAP</a></li>
+                            <li><a id="RTE">RTE</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">XYL</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <svg width="960" height="960"></svg>
+    </div>
+</div>
+</body>
+
+<script src="{% static "js/eventprocess.js" %}"></script>
+<script src="{% static "js/scattermap.js" %}"></script>
+<script src="{% static "js/densitymap.js" %}"></script>
+</html>
